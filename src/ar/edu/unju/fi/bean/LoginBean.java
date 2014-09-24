@@ -16,7 +16,7 @@ public class LoginBean {
 	public String nombre;
 	public String apellido;
 	public String rol;
-	
+	public String error="false";	
 	
 	public String validar(){
 		Usuario userLogueado=ManagerUsuario.validarUsuario(dni, password);
@@ -28,7 +28,8 @@ public class LoginBean {
 			rol=userLogueado.getRol().getDescripcion();
 			return "productList";
 		}else{
-			return "error";
+			error="true";
+			return null;
 		}
 	}
 	
@@ -75,6 +76,17 @@ public class LoginBean {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
+
+
+	public String getError() {
+		return error;
+	}
+
+
+	public void setError(String error) {
+		this.error = error;
+	}
+	
 	
 	
 	

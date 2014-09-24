@@ -31,7 +31,7 @@ public class ManagerProducto {
 		List<Producto> encontrados=new ArrayList<Producto>();
 		
 		for(Producto p : productos){
-			if(p.getCodigo().equals(codigo) || (p.getNombre().contains(nombre)	&& !nombre.isEmpty()) || p.getEstado().equals(estado) ){
+			if(p.getCodigo().equals(codigo) || (p.getNombre().contains(nombre)	&& !nombre.isEmpty()) || (p.getEstado().equals(estado) && !estado.equals("TODO")) ){
 				encontrados.add(p);
 			}
 		}

@@ -36,3 +36,8 @@ body{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+.error{
+	display: block;
+	color: red;
+	font: oblique;
+}

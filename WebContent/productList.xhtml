@@ -15,46 +15,46 @@
 			<center>
 			<h:form>
 		 	<h:panelGrid columns="3"> 		
-		 		<h:outputText value="Código"/>
+		 		<h:outputText value="#{msg.label_codigo}"/>
 		      	<h:inputText id="codigo" value="#{productListBean.codigo}" converterMessage="Debe ingresar un Número">
 		      		<f:convertNumber integerOnly="true" />
 		      	</h:inputText>
 		      	<h:message for="codigo" styleClass="error" />
 		
-		 		<h:outputText value="Nombre"/>
+		 		<h:outputText value="#{msg.label_nombre_prod}"/>
 		      	<h:inputText id="nombre" value="#{productListBean.nombre}" /><br/>      	
 		      	
-		      	<h:outputText value="Estado"/>
+		      	<h:outputText value="#{msg.label_estado_prod}"/>
 		      	<h:selectOneMenu value="#{productListBean.estado}">
-		      		<f:selectItem itemLabel="Todo" itemValue="TODO"/>
-		      		<f:selectItem itemLabel="Disponible" itemValue="DISPONIBLE"/>
-		      		<f:selectItem itemLabel="No Disponible" itemValue="NO DISPONIBLE"/>
+		      		<f:selectItem itemValue="TODO" itemLabel="#{msg.menu_estado_todo}"/>
+		      		<f:selectItem itemValue="DISPONIBLE" itemLabel="#{msg.menu_estado_disponible}"/>
+		      		<f:selectItem itemValue="NO DISPONIBLE" itemLabel="#{msg.menu_estado_nodisponible}"/>
 		      	</h:selectOneMenu>
-		        <h:commandButton id="submit" action="#{productListBean.search}"  value="Buscar"/> 
+		        <h:commandButton id="submit" action="#{productListBean.search}"  value="#{msg.btn_buscar_prod}"/> 
 			</h:panelGrid>
 			
 			<h:dataTable id="products" value="#{productListBean.productList}" var="x">
 				<h:column >
 					<f:facet name="header" >
-						CODIGO    
+						<h:outputText value="#{msg.header_codigo}"/>
 					</f:facet>
 					<h:outputText value="#{x.codigo}"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header" >
-						NOMBRE
+						<h:outputText value="#{msg.header_nombre}"/>
 					</f:facet>		
 					<h:outputText value="#{x.nombre}"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header" >
-						ESTADO
+						<h:outputText value="#{msg.header_estado}"/>
 					</f:facet>
 					<h:outputText value="#{x.estado}"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header" >
-						PRECIO UNIT. 
+						<h:outputText value="#{msg.header_precio}"/>
 					</f:facet>
 					<h:outputText value="#{x.precioUnitario}">
 						<f:convertNumber pattern="$#,##0.00"/>				
